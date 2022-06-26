@@ -1,0 +1,45 @@
+.movie-title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.genres {
+    background-color: blue;
+    color: white;
+    border-radius: 13px;
+    padding: 4px 7px 4px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+.movie-genres {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.subcontent {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.checked {
+    color: orange;
+}
+
+.movie-resume{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.actor-name {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title *ngIf="movies.title">{{movies.title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movies.backdrop_path ">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <span class="movie-title">{{movies.title}}</span>
+                <div class="movie-genres">
+                    <span class="genres" *ngFor="let genre of movies.genres"> {{ genre.name }}</span>
+                </div>
+                <div class="subcontent">
+                    <span>
+                        {{movies.release_date | slice:0:4}}
+                    </span>
+                    <span>
+                        <span class="fa fa-star checked"></span> {{movies.vote_average}} / 10
+                    </span>
+                </div>
+                <div class="movie-resume">
+                    <span>{{movies.overview}}</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6" *ngFor="let actor of actors">
+                  <div (click)="navToActor(actor.id)">
+                    <img *ngIf="actor.profile_path != null" style="width:100%;" [src]="'https://image.tmdb.org/t/p/w500/' + actor.profile_path">
+                    <strong><span *ngIf="actor.profile_path != null" class="actor-name">{{ actor.original_name}}</span></strong>
+                    <span *ngIf="actor.profile_path != null" class="actor-name">{{ actor.character}}</span>
+                  </div>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "tp-movie",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
